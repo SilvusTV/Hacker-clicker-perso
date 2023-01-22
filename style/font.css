@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;700;800;900&display=swap');
 @font-face {
-    font-family: 'windows-command-prompt';
-    src: url(../asset/font/windows_command_prompt.ttf);
+    font-family: pixel;
+    src: url(../asset/font/VPPixel-Simplified.otf);
+}
+@font-face {
+    font-family: terminal;
+    src: url(../asset/font/windows_command_prompt.otf);
 }
