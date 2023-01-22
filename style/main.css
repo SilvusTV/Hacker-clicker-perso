@@ -1,20 +1,22 @@
 @import "./font.css";
 
-
 :root {
     --main-bg-color: #343434;
     --major-green: #138A36;
     --major-bleu: #028090;
     --major-white: #F0F7F4;
     --major-error: #DB3A34;
-    --principal-font: 'Inconsolata', monospace;
+    --principal-font: terminal;
 
 }
+
 html {
     font-family: var(--principal-font);
+    font-weight: 100;
     overflow: hidden;
     background-color: var(--main-bg-color);
 }
+
 .page_wrapper {
     display: flex;
     position: relative;
@@ -25,38 +27,52 @@ html {
     position: relative;
     flex: 2 1 auto;
     height: 100vh;
-    max-width: 37vw ;
+    max-width: 37vw;
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
-.left-part .pc_clicker{
+
+.left-part .pc_clicker {
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-.left-part .pc_clicker img{
-    width: 400px;
-    height: 400px;
+
+.left-part .pc_clicker img {
+    width: 22vw;
+    height: auto;
 }
-.left-part .text{
+
+.left-part .pc_clicker p {
+    top: 20%;
+    left: 47%;
+    font-size: 1.8rem;
+    position: absolute;
+    color: #34700a;
+    font-family: pixel;
+}
+
+.left-part .text {
     display: flex;
     flex-direction: column;
     gap: 2vh;
     margin-top: 10px;
 }
-.left-part .text .bugs_count{
+
+.left-part .text .bugs_count {
     display: block;
     font-size: 2rem;
 }
-.left-part .reset{
+
+.left-part .reset {
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     bottom: 0;
     left: 50%;
 }
@@ -66,53 +82,52 @@ html {
     background-color: green;
 }
 
-.right-part{
+.right-part {
     flex: 1 1 auto;
     max-width: 25vw;
 }
-.right-part .upgrade{
+
+.right-part .upgrade {
     border: solid 1px #000000;
     display: flex;
     flex-direction: row;
     align-items: center;
     background: #999999;
 }
-.right-part .upgrade .text{
+
+.right-part .upgrade .text {
     margin-left: 20px;
 }
-.right-part .upgrade .text .name{
+
+.right-part .upgrade .text .name {
     font-weight: 900;
     font-size: 1.2rem;
 }
-.price{
+
+.price {
     font-weight: 700;
     color: var(--major-green);
 }
-.right-part .upgrade .name , .price {
+
+.right-part .upgrade .name, .price {
     line-height: .5rem;
 }
-.right-part .upgrade .number{
+
+.right-part .upgrade .number {
     position: absolute;
     right: 20px;
     font-size: 4rem;
 }
 
 
-
-
-
-
-
-
-
-
-
-.sucess{
+.sucess {
     color: var(--major-green);
 }
-.error{
+
+.error {
     color: var(--major-error);
 }
-.clickable{
+
+.clickable {
     cursor: pointer;
 }

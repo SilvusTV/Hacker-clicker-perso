@@ -42,6 +42,7 @@ function update() {
     document.querySelector('title').innerHTML = parseInt(localStorage.BUGS_NUMBER) + " Bugs - Hacker clicker";
     document.getElementById("price").innerHTML = localStorage.CURENT_PRICE_BUG_DETECTOR;
     document.getElementById("upgrade_value").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
+    document.getElementById("bug_checker_count").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
     document.getElementById("cps_count").innerHTML = localStorage.CPS;
 }
 
