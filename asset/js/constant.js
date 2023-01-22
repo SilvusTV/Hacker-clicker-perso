@@ -25,4 +25,5 @@ function data_reset(){
     localStorage.setItem("TOTAL_BUG_DETECTOR", "0")
     localStorage.setItem("BASE_PRICE_BUG_DETECTOR", "15")
     localStorage.setItem("CURENT_PRICE_BUG_DETECTOR", "15")
+    localStorage.setItem("SCREEN_BUGS_NUMBER", "0")
 }
