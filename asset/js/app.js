@@ -8,30 +8,57 @@ function clicker() {
 }
 
 function price_changer() {
+
+    //Bug Detector
     if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_BUG_DETECTOR)) {
         document.getElementById("price-BD").classList.remove("error");
-        document.getElementById("upgrade-BD").classList.add("clickable");
-        document.getElementById("upgrade-BD").setAttribute("onclick", "upgrade()")
+        document.getElementById("build-BD").classList.add("clickable");
+        document.getElementById("build-BD").setAttribute("onclick", "build(BD)")
         update()
     } else {
         document.getElementById("price-BD").classList.add("error");
-        document.getElementById("upgrade-BD").classList.remove("clickable");
-        document.getElementById("upgrade-BD").removeAttribute("onclick")
+        document.getElementById("build-BD").classList.remove("clickable");
+        document.getElementById("build-BD").removeAttribute("onclick")
+    }
+    //Brute Force
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_BRUT_FORCE)) {
+        document.getElementById("price-BF").classList.remove("error");
+        document.getElementById("build-BF").classList.add("clickable");
+        document.getElementById("build-BF").setAttribute("onclick", "build(BF)")
+        update()
+    } else {
+        document.getElementById("price-BF").classList.add("error");
+        document.getElementById("build-BF").classList.remove("clickable");
+        document.getElementById("build-BF").removeAttribute("onclick")
     }
 }
 
-function upgrade() {
-    let upgrade = parseInt(localStorage.TOTAL_BUG_DETECTOR) + 1;
-    localStorage.setItem("TOTAL_BUG_DETECTOR", upgrade)
+function build(build) {
+    if (build === "BUG_DETECTOR") {
+        var total = localStorage.TOTAL_BUG_DETECTOR
+        var curent = localStorage.CURENT_PRICE_BUG_DETECTOR
+        var base = localStorage.BASE_PRICE_BUG_DETECTOR
+        var cps = localStorage.CPS_BUG_DETECTOR
+    }else if (build === "BRUT_FORCE"){
+        var total = localStorage.TOTAL_BRUT_FORCE
+        var curent = localStorage.CURENT_PRICE_BRUT_FORCE
+        var base = localStorage.BASE_PRICE_BRUT_FORCE
+        var cps = localStorage.CPS_BRUT_FORCE
+    }
 
-    let new_price = parseFloat(localStorage.BUGS_NUMBER) - parseInt(localStorage.CURENT_PRICE_BUG_DETECTOR)
+
+    let upgrade = parseInt(total) + 1;
+    localStorage.setItem("TOTAL_" + build, upgrade)
+
+    let new_price = parseFloat(localStorage.BUGS_NUMBER) - parseInt(curent)
     localStorage.setItem("BUGS_NUMBER", new_price)
 
-    let price_bug_detector = Math.round(parseInt(localStorage.BASE_PRICE_BUG_DETECTOR) * 1.15 ** (parseInt(localStorage.TOTAL_BUG_DETECTOR)));
-    localStorage.setItem("CURENT_PRICE_BUG_DETECTOR", price_bug_detector);
+    let price_bug_detector = Math.round(parseInt(base) * 1.15 ** (parseInt(total)));
+    localStorage.setItem("CURENT_PRICE_" + build, price_bug_detector);
 
-    let new_cps = (parseFloat(localStorage.CPS)) + 0.2
+    let new_cps = (parseFloat(localStorage.CPS)) + parseFloat(cps);
     localStorage.setItem("CPS", new_cps.toFixed(2))
+
     update()
     price_changer()
     bugs_visual(new_price)
@@ -45,10 +72,14 @@ function update() {
     }
     document.getElementById("counter").innerHTML = localStorage.SCREEN_BUGS_NUMBER
     document.querySelector('title').innerHTML = localStorage.SCREEN_BUGS_NUMBER + " Bugs - Hacker clicker";
-    document.getElementById("price-BD").innerHTML = localStorage.CURENT_PRICE_BUG_DETECTOR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById("upgrade_value-BD").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
     document.getElementById("bug_checker_count").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
     document.getElementById("cps_count").innerHTML = localStorage.CPS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //Bug Detector
+    document.getElementById("price-BD").innerHTML = localStorage.CURENT_PRICE_BUG_DETECTOR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-BD").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
+   //Brut force
+    document.getElementById("price-BF").innerHTML = localStorage.CURENT_PRICE_BRUT_FORCE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-BF").innerHTML = localStorage.TOTAL_BRUT_FORCE;
 }
 
 function cps() {
