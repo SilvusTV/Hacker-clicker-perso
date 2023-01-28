@@ -53,9 +53,9 @@ html {
 }
 
 .left-part .pc_clicker p {
-    top: 20%;
+    top: 18%;
     left: 47%;
-    font-size: 1.8rem;
+    font-size: 1.7vw;
     position: absolute;
     color: #34700a;
     font-family: pixel;
