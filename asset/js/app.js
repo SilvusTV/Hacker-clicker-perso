@@ -53,7 +53,7 @@ function build(build) {
     let new_price = parseFloat(localStorage.BUGS_NUMBER) - parseInt(curent)
     localStorage.setItem("BUGS_NUMBER", new_price)
 
-    let price_bug_detector = Math.round(parseInt(base) * 1.15 ** (parseInt(total)));
+    let price_bug_detector = Math.round(parseInt(base) * 1.15 ** (parseInt(total)+1));
     localStorage.setItem("CURENT_PRICE_" + build, price_bug_detector);
 
     let new_cps = (parseFloat(localStorage.CPS)) + parseFloat(cps);
