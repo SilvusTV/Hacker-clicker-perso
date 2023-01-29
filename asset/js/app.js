@@ -16,9 +16,8 @@ function price_changer() {
         document.getElementById("build-BD").setAttribute("onclick", "build(BD)")
         update()
     } else {
-        document.getElementById("price-BD").classList.add("error");
-        document.getElementById("build-BD").classList.remove("clickable");
-        document.getElementById("build-BD").removeAttribute("onclick")
+        let who = "BD";
+        remove(who);
     }
     //Brute Force
     if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_BRUT_FORCE)) {
@@ -27,9 +26,36 @@ function price_changer() {
         document.getElementById("build-BF").setAttribute("onclick", "build(BF)")
         update()
     } else {
-        document.getElementById("price-BF").classList.add("error");
-        document.getElementById("build-BF").classList.remove("clickable");
-        document.getElementById("build-BF").removeAttribute("onclick")
+        let who = "BF";
+        remove(who);
+    }
+    //Anonymous
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_ANONYMOUS)) {
+        document.getElementById("price-ANO").classList.remove("error");
+        document.getElementById("build-ANO").classList.add("clickable");
+        document.getElementById("build-ANO").setAttribute("onclick", "build(ANO)")
+        update()
+    } else {
+        let who = "ANO";
+        remove(who);
+    }
+    //DDOS
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_DDOS)) {
+        document.getElementById("price-DDOS").classList.remove("error");
+        document.getElementById("build-DDOS").classList.add("clickable");
+        document.getElementById("build-DDOS").setAttribute("onclick", "build(DDOS)")
+        update()
+    } else {
+        let who = "DDOS";
+        remove(who);
+    }
+
+
+
+    function remove(who) {
+        document.getElementById("price-"+who).classList.add("error");
+        document.getElementById("build-"+who).classList.remove("clickable");
+        document.getElementById("build-"+who).removeAttribute("onclick")
     }
 }
 
@@ -44,6 +70,16 @@ function build(build) {
         var curent = localStorage.CURENT_PRICE_BRUT_FORCE
         var base = localStorage.BASE_PRICE_BRUT_FORCE
         var cps = localStorage.CPS_BRUT_FORCE
+    }else if (build === "ANONYMOUS"){
+        var total = localStorage.TOTAL_ANONYMOUS
+        var curent = localStorage.CURENT_PRICE_ANONYMOUS
+        var base = localStorage.BASE_PRICE_ANONYMOUS
+        var cps = localStorage.CPS_ANONYMOUS
+    }else if (build === "DDOS"){
+        var total = localStorage.TOTAL_DDOS
+        var curent = localStorage.CURENT_PRICE_DDOS
+        var base = localStorage.BASE_PRICE_DDOS
+        var cps = localStorage.CPS_DDOS
     }
 
 
@@ -80,6 +116,12 @@ function update() {
    //Brut force
     document.getElementById("price-BF").innerHTML = localStorage.CURENT_PRICE_BRUT_FORCE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-BF").innerHTML = localStorage.TOTAL_BRUT_FORCE;
+   //Anonymous
+    document.getElementById("price-ANO").innerHTML = localStorage.CURENT_PRICE_ANONYMOUS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-ANO").innerHTML = localStorage.TOTAL_ANONYMOUS;
+   //DDOS
+    document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
 }
 
 function cps() {
