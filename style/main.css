@@ -121,7 +121,7 @@ html {
     right: 20px;
     font-size: 4rem;
 }
-.right-part #build-BF .img{
+.right-part .build:not(#build-BD) .img{
     padding-left: 17px;
     padding-right: 17px;
 }
