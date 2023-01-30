@@ -1,0 +1,1 @@
+Figma protool : https://www.figma.com/file/bc4ZDgvMQLcBcjsJnsOWcg/Hack-Clicker-Alpha?node-id=0%3A1&t=qd8PxqYnVzj9Me98-1
