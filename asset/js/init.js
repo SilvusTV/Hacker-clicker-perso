@@ -8,6 +8,10 @@ if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
     cps()
 }
 
+/*window.onload = function (){
+    document.getElementById("my_audio").play;*/
+}
+
 function reset() {
 
     const result = confirm("reset ?")
