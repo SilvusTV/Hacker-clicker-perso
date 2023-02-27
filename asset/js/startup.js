@@ -8,7 +8,7 @@ if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
     var speed = 20; /* The speed/duration of the effect in milliseconds */
 
     typeWriter()
-    setTimeout(inputController, speed * txt.length);
+    setTimeout(inputController, speed * txt.length + 200);
 }
 function typeWriter() {
     if (txt !== undefined) {
@@ -25,7 +25,8 @@ function typeWriter() {
 function inputController(){
     document.getElementById("text").innerHTML +=
         "<span class='input_field'>" +
-        "<label for='input'>[clickerUser@localhost</label>";
+        "<label for='input'>[clicker@localhost ~   </label>" +
+        "<input type='text' name='input' autofocus>";
 }
 document.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
