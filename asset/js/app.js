@@ -2,6 +2,8 @@ function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
     localStorage.setItem("BUGS_NUMBER", bug_number);
+    let click = new Audio('/asset/sound/click.mp3')
+    click.play()
     update()
     price_changer()
     bugs_visual(bug_number)
@@ -50,8 +52,6 @@ function price_changer() {
         remove(who);
     }
 
-
-
     function remove(who) {
         document.getElementById("price-"+who).classList.add("error");
         document.getElementById("build-"+who).classList.remove("clickable");
@@ -95,6 +95,9 @@ function build(build) {
     let new_cps = (parseFloat(localStorage.CPS)) + parseFloat(cps);
     localStorage.setItem("CPS", new_cps.toFixed(2))
 
+    let upgradeSound = new Audio('/asset/sound/upgrade.mp3')
+    upgradeSound.play()
+
     update()
     price_changer()
     bugs_visual(new_price)
@@ -122,6 +125,7 @@ function update() {
    //DDOS
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
+
 }
 
 function cps() {

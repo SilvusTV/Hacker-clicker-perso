@@ -1,0 +1,7 @@
+@import "font.css";
+
+html {
+    background: black;
+    color: white;
+    font-family: linux-terminal;
+}
