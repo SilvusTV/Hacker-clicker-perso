@@ -10,6 +10,7 @@ input{
     border: 0;
     color: white;
     font-family: linux-terminal;
+    width: calc(90vw - 170px);
 }
 input:focus{
     border: none;

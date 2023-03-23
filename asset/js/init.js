@@ -1,6 +1,6 @@
 if (localStorage.length === 0) {
-    location.assign("http://localhost:63342/Hacker-clicker-perso/game.html?_ijt=dlisqf9nkorbbmgeoaddg20r1j&_ij_reload=RELOAD_ON_SAVE")
-    window.location();
+    //location.assign("http://localhost:63342/Hacker-clicker-perso/game.html?_ijt=dlisqf9nkorbbmgeoaddg20r1j&_ij_reload=RELOAD_ON_SAVE")
+    //window.location();
 }
 
 if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
