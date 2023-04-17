@@ -1,6 +1,8 @@
 if (localStorage.length === 0) {
-    //location.assign("http://localhost:63342/Hacker-clicker-perso/game.html?_ijt=dlisqf9nkorbbmgeoaddg20r1j&_ij_reload=RELOAD_ON_SAVE")
-    //window.location();
+    document.location.href = window.location.protocol + '//' + window.location.host + '/';
+}else if(localStorage.length === 1){
+    localStorage.clear()
+    data_reset()
 }
 
 if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
@@ -11,15 +13,24 @@ if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
 
 function reset() {
 
-    const result = confirm("reset ?")
+    const result = confirm("Voulez-vous recommencer le jeu ?")
     if (result === true) {
-        localStorage.clear();
-        location.reload();
-        data_reset();
+        const result = confirm("Voulez-vous retourner à l'invite de commande ?")
+        if (result === true) {
+            localStorage.clear();
+            document.location.href = window.location.protocol + '//' + window.location.host + '/';
+        } else {
+            localStorage.clear();
+            data_reset();
+            location.reload();
+        }
+
     }
 
 }
-function data_reset(){
+
+function data_reset() {
+    console.log("reset")
     //global init
     localStorage.setItem("BUGS_NUMBER", "0");
     localStorage.setItem("SCREEN_BUGS_NUMBER", "0")

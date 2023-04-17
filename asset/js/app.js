@@ -60,26 +60,30 @@ function price_changer() {
 }
 
 function build(build) {
+    var total = ""
+    var curent = ""
+    var base = ""
+    var cps = ""
     if (build === "BUG_DETECTOR") {
-        var total = localStorage.TOTAL_BUG_DETECTOR
-        var curent = localStorage.CURENT_PRICE_BUG_DETECTOR
-        var base = localStorage.BASE_PRICE_BUG_DETECTOR
-        var cps = localStorage.CPS_BUG_DETECTOR
+        total = localStorage.TOTAL_BUG_DETECTOR
+        curent = localStorage.CURENT_PRICE_BUG_DETECTOR
+        base = localStorage.BASE_PRICE_BUG_DETECTOR
+        cps = localStorage.CPS_BUG_DETECTOR
     }else if (build === "BRUT_FORCE"){
-        var total = localStorage.TOTAL_BRUT_FORCE
-        var curent = localStorage.CURENT_PRICE_BRUT_FORCE
-        var base = localStorage.BASE_PRICE_BRUT_FORCE
-        var cps = localStorage.CPS_BRUT_FORCE
+        total = localStorage.TOTAL_BRUT_FORCE
+        curent = localStorage.CURENT_PRICE_BRUT_FORCE
+        base = localStorage.BASE_PRICE_BRUT_FORCE
+        cps = localStorage.CPS_BRUT_FORCE
     }else if (build === "ANONYMOUS"){
-        var total = localStorage.TOTAL_ANONYMOUS
-        var curent = localStorage.CURENT_PRICE_ANONYMOUS
-        var base = localStorage.BASE_PRICE_ANONYMOUS
-        var cps = localStorage.CPS_ANONYMOUS
+        total = localStorage.TOTAL_ANONYMOUS
+        curent = localStorage.CURENT_PRICE_ANONYMOUS
+        base = localStorage.BASE_PRICE_ANONYMOUS
+        cps = localStorage.CPS_ANONYMOUS
     }else if (build === "DDOS"){
-        var total = localStorage.TOTAL_DDOS
-        var curent = localStorage.CURENT_PRICE_DDOS
-        var base = localStorage.BASE_PRICE_DDOS
-        var cps = localStorage.CPS_DDOS
+        total = localStorage.TOTAL_DDOS
+        curent = localStorage.CURENT_PRICE_DDOS
+        base = localStorage.BASE_PRICE_DDOS
+        cps = localStorage.CPS_DDOS
     }
 
 
