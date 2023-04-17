@@ -2,94 +2,15 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="asset/images/PC.png" type="image/x-icon">
-    <link rel="stylesheet" href="style/main.css">
-    <title>0 Bugs - Hacker clicker</title>
-    <script src="asset/js/constant.js"></script>
+    <link rel="stylesheet" href="style/startup.css">
+    <title>Startup</title>
 </head>
 <body>
-<section class="page_wrapper">
-    <div class="left-part">
-        <span class="text">
-            <span class="bugs_count">
-                <h2 class="bugs" id="test"><span id="counter">0</span> BUGS</h2>
-                <h6 class="cps"><span id="cps_count">0</span> Bugs par seconde</h6>
-            </span>
-        </span>
-        <button class="pc_clicker" id="clicker" onclick="clicker()">
-            <img src="asset/images/PC1024.png">
-            <p id="bug_checker_count" class="bc_count">0</p>
-        </button>
-        <button class="reset" onclick="reset()">reset</button>
-    </div>
-    <div class="midle-part">
-        <h1 class="temp">history zone</h1>
-    </div>
-    <div class="right-part">
-
-        <h1 class="temp">build Zone</h1>
-        <div class="build_list">
-
-            <div class="build" id="build-BD">
-                <span class="img"><img src="asset/images/PC.png" alt="bug detector"></span>
-                <div class="text">
-                    <p class="name">Bug Checker</p>
-                    <p class="error price" id="price-BD">15</p>
-                </div>
-                <p class="number" id="build_value-BD">0</p>
-            </div>
-
-            <div class="build" id="build-BF">
-                <span class="img"><img src="asset/images/brut-force.png" alt="brut force"></span>
-                <div class="text">
-                    <p class="name">Brut Force</p>
-                    <p class="error price" id="price-BF">100</p>
-                </div>
-                <p class="number" id="build_value-BF">0</p>
-            </div>
-
-            <div class="build" id="build-FZ">
-                <span class="img"><img src=" " alt="Flipper Zero"></span>
-                <div class="text">
-                    <p class="name">Flipper Zero</p>
-                    <p class="error price" id="price-FZ">1,100</p>
-                </div>
-                <p class="number" id="build_value-FZ">0</p>
-            </div>
-
-            <div class="build" id="build-PHS">
-                <span class="img"><img src="asset\images\phishing.png" alt="phishing"></span>
-                <div class="text">
-                    <p class="name">Phishing</p>
-                    <p class="error price" id="price-PHS">12,000</p>
-                </div>
-                <p class="number" id="build_value-PHS">0</p>
-            </div>
-
-            <div class="build" id="build-ANO">
-                <span class="img"><img src="asset/images/anonymous.png" alt="anonymous"></span>
-                <div class="text">
-                    <p class="name">Anonymous</p>
-                    <p class="error price" id="price-ANO">130,000</p>
-                </div>
-                <p class="number" id="build_value-ANO">0</p>
-            </div>
-
-            <div class="build" id="build-DDOS">
-                <span class="img"><img src="asset/images/DDOS.png" alt="DDOS"></span>
-                <div class="text">
-                    <p class="name">DDOS</p>
-                    <p class="error price" id="price-DDOS">1,400,000</p>
-                </div>
-                <p class="number" id="build_value-DDOS">0</p>
-            </div>
-            
-        </div>
-    </div>
-    <script src="asset/js/app.js"></script>
-    <script src="asset/js/init.js"></script>
-</section>
+<p id="startupMessage"></p>
+<div id="text"></div>
 </body>
+<script src="asset/js/startup.js"></script>
 </html>

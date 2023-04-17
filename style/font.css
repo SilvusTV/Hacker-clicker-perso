@@ -7,3 +7,7 @@
     font-family: terminal;
     src: url(../asset/font/windows_command_prompt.otf);
 }
+@font-face {
+    font-family: linux-terminal;
+    src: url(../asset/font/IBM-Courier-Bold.otf);
+}

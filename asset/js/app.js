@@ -2,6 +2,8 @@ function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
     localStorage.setItem("BUGS_NUMBER", bug_number);
+    let click = new Audio('/asset/sound/click.mp3')
+    click.play()
     update()
     price_changer()
     bugs_visual(bug_number)
@@ -70,8 +72,6 @@ function price_changer() {
         remove(who);
     }
 
-
-
     function remove(who) {
         document.getElementById("price-"+who).classList.add("error");
         document.getElementById("build-"+who).classList.remove("clickable");
@@ -80,36 +80,41 @@ function price_changer() {
 }
 
 function build(build) {
+    var total = ""
+    var curent = ""
+    var base = ""
+    var cps = ""
     if (build === "BUG_DETECTOR") {
-        var total = localStorage.TOTAL_BUG_DETECTOR
-        var curent = localStorage.CURENT_PRICE_BUG_DETECTOR
-        var base = localStorage.BASE_PRICE_BUG_DETECTOR
-        var cps = localStorage.CPS_BUG_DETECTOR
+        total = localStorage.TOTAL_BUG_DETECTOR
+        curent = localStorage.CURENT_PRICE_BUG_DETECTOR
+        base = localStorage.BASE_PRICE_BUG_DETECTOR
+        cps = localStorage.CPS_BUG_DETECTOR
     }else if (build === "BRUT_FORCE"){
-        var total = localStorage.TOTAL_BRUT_FORCE
-        var curent = localStorage.CURENT_PRICE_BRUT_FORCE
-        var base = localStorage.BASE_PRICE_BRUT_FORCE
-        var cps = localStorage.CPS_BRUT_FORCE
+
+        total = localStorage.TOTAL_BRUT_FORCE
+        curent = localStorage.CURENT_PRICE_BRUT_FORCE
+        base = localStorage.BASE_PRICE_BRUT_FORCE
+        cps = localStorage.CPS_BRUT_FORCE
     }else if (build === "FLIPPER_ZERO"){
-        var total = localStorage.TOTAL_FLIPPER_ZERO
-        var curent = localStorage.CURENT_PRICE_FLIPPER_ZERO
-        var base = localStorage.BASE_PRICE_FLIPPER_ZERO
-        var cps = localStorage.CPS_FLIPPER_ZERO
+        total = localStorage.TOTAL_FLIPPER_ZERO
+        curent = localStorage.CURENT_PRICE_FLIPPER_ZERO
+        base = localStorage.BASE_PRICE_FLIPPER_ZERO
+        cps = localStorage.CPS_FLIPPER_ZERO
     }else if (build === "PHISHING"){
-        var total = localStorage.TOTAL_PHISHING
-        var curent = localStorage.CURENT_PRICE_PHISHING
-        var base = localStorage.BASE_PRICE_PHISHING
-        var cps = localStorage.CPS_PHISHING
+        total = localStorage.TOTAL_PHISHING
+        curent = localStorage.CURENT_PRICE_PHISHING
+        base = localStorage.BASE_PRICE_PHISHING
+        cps = localStorage.CPS_PHISHING
     }else if (build === "ANONYMOUS"){
-        var total = localStorage.TOTAL_ANONYMOUS
-        var curent = localStorage.CURENT_PRICE_ANONYMOUS
-        var base = localStorage.BASE_PRICE_ANONYMOUS
-        var cps = localStorage.CPS_ANONYMOUS
+        total = localStorage.TOTAL_ANONYMOUS
+        curent = localStorage.CURENT_PRICE_ANONYMOUS
+        base = localStorage.BASE_PRICE_ANONYMOUS
+        cps = localStorage.CPS_ANONYMOUS
     }else if (build === "DDOS"){
-        var total = localStorage.TOTAL_DDOS
-        var curent = localStorage.CURENT_PRICE_DDOS
-        var base = localStorage.BASE_PRICE_DDOS
-        var cps = localStorage.CPS_DDOS
+        total = localStorage.TOTAL_DDOS
+        curent = localStorage.CURENT_PRICE_DDOS
+        base = localStorage.BASE_PRICE_DDOS
+        cps = localStorage.CPS_DDOS
     }
 
 
@@ -124,6 +129,9 @@ function build(build) {
 
     let new_cps = (parseFloat(localStorage.CPS)) + parseFloat(cps);
     localStorage.setItem("CPS", new_cps.toFixed(2))
+
+    let upgradeSound = new Audio('/asset/sound/upgrade.mp3')
+    upgradeSound.play()
 
     update()
     price_changer()
@@ -164,6 +172,7 @@ function update() {
     //DDOS
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
+
 }
 
 function cps() {
