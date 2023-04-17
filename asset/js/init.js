@@ -28,20 +28,30 @@ function data_reset(){
     localStorage.setItem("TOTAL_BUG_DETECTOR", "0")
     localStorage.setItem("BASE_PRICE_BUG_DETECTOR", "15")
     localStorage.setItem("CURENT_PRICE_BUG_DETECTOR", "15")
-    localStorage.setItem("CPS_BUG_DETECTOR", "0.2")
+    localStorage.setItem("CPS_BUG_DETECTOR", "0.1")
     //brut force
     localStorage.setItem("TOTAL_BRUT_FORCE", "0")
     localStorage.setItem("BASE_PRICE_BRUT_FORCE", "100")
     localStorage.setItem("CURENT_PRICE_BRUT_FORCE", "100")
-    localStorage.setItem("CPS_BRUT_FORCE", "0.8")
-    //ANONYMOUS
-    localStorage.setItem("TOTAL_ANONYMOUS", "0")
-    localStorage.setItem("BASE_PRICE_ANONYMOUS", "500")
-    localStorage.setItem("CURENT_PRICE_ANONYMOUS", "500")
-    localStorage.setItem("CPS_ANONYMOUS", "4")
+    localStorage.setItem("CPS_BRUT_FORCE", "1")
+    //FLIPPER ZERO
+    localStorage.setItem("TOTAL_FLIPPER_ZERO", "0")
+    localStorage.setItem("BASE_PRICE_FLIPPER_ZERO", "1100")
+    localStorage.setItem("CURENT_PRICE_FLIPPER_ZERO", "1100")
+    localStorage.setItem("CPS_FLIPPER_ZERO", "8")
+    //PHISHING
+    localStorage.setItem("TOTAL_PHISHING", "0")
+    localStorage.setItem("BASE_PRICE_PHISHING", "12000")
+    localStorage.setItem("CURENT_PRICE_PHISHING", "12000")
+    localStorage.setItem("CPS_PHISHING", "47")
+     //ANONYMOUS
+     localStorage.setItem("TOTAL_ANONYMOUS", "0")
+     localStorage.setItem("BASE_PRICE_ANONYMOUS", "130000")
+     localStorage.setItem("CURENT_PRICE_ANONYMOUS", "130000")
+     localStorage.setItem("CPS_ANONYMOUS", "260")
     //DDOS
     localStorage.setItem("TOTAL_DDOS", "0")
-    localStorage.setItem("BASE_PRICE_DDOS", "2000")
-    localStorage.setItem("CURENT_PRICE_DDOS", "2000")
-    localStorage.setItem("CPS_DDOS", "10")
+    localStorage.setItem("BASE_PRICE_DDOS", "1400000")
+    localStorage.setItem("CURENT_PRICE_DDOS", "1400000")
+    localStorage.setItem("CPS_DDOS", "1400")
 }
