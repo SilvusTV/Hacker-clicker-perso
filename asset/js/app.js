@@ -41,6 +41,26 @@ function price_changer() {
         let who = "ANO";
         remove(who);
     }
+    //Flipper Zero
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_FLIPPER_ZERO)) {
+        document.getElementById("price-FZ").classList.remove("error");
+        document.getElementById("build-FZ").classList.add("clickable");
+        document.getElementById("build-FZ").setAttribute("onclick", "build(FZ)")
+        update()
+    } else {
+        let who = "FZ";
+        remove(who);
+    }
+    //Phishing
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_PHISHING)) {
+        document.getElementById("price-PHS").classList.remove("error");
+        document.getElementById("build-PHS").classList.add("clickable");
+        document.getElementById("build-PHS").setAttribute("onclick", "build(PHS)")
+        update()
+    } else {
+        let who = "PHS";
+        remove(who);
+    }
     //DDOS
     if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_DDOS)) {
         document.getElementById("price-DDOS").classList.remove("error");
@@ -70,10 +90,21 @@ function build(build) {
         base = localStorage.BASE_PRICE_BUG_DETECTOR
         cps = localStorage.CPS_BUG_DETECTOR
     }else if (build === "BRUT_FORCE"){
+
         total = localStorage.TOTAL_BRUT_FORCE
         curent = localStorage.CURENT_PRICE_BRUT_FORCE
         base = localStorage.BASE_PRICE_BRUT_FORCE
         cps = localStorage.CPS_BRUT_FORCE
+    }else if (build === "FLIPPER_ZERO"){
+        total = localStorage.TOTAL_FLIPPER_ZERO
+        curent = localStorage.CURENT_PRICE_FLIPPER_ZERO
+        base = localStorage.BASE_PRICE_FLIPPER_ZERO
+        cps = localStorage.CPS_FLIPPER_ZERO
+    }else if (build === "PHISHING"){
+        total = localStorage.TOTAL_PHISHING
+        curent = localStorage.CURENT_PRICE_PHISHING
+        base = localStorage.BASE_PRICE_PHISHING
+        cps = localStorage.CPS_PHISHING
     }else if (build === "ANONYMOUS"){
         total = localStorage.TOTAL_ANONYMOUS
         curent = localStorage.CURENT_PRICE_ANONYMOUS
@@ -117,16 +148,28 @@ function update() {
     document.querySelector('title').innerHTML = localStorage.SCREEN_BUGS_NUMBER + " Bugs - Hacker clicker";
     document.getElementById("bug_checker_count").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
     document.getElementById("cps_count").innerHTML = localStorage.CPS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    
     //Bug Detector
     document.getElementById("price-BD").innerHTML = localStorage.CURENT_PRICE_BUG_DETECTOR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-BD").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
-   //Brut force
+   
+    //Brut force
     document.getElementById("price-BF").innerHTML = localStorage.CURENT_PRICE_BRUT_FORCE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-BF").innerHTML = localStorage.TOTAL_BRUT_FORCE;
+    
+    //Flipper zero
+    document.getElementById("price-FZ").innerHTML = localStorage.CURENT_PRICE_FLIPPER_ZERO.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-FZ").innerHTML = localStorage.TOTAL_FLIPPER_ZERO;
+    
+    //Phishing
+    document.getElementById("price-PHS").innerHTML = localStorage.CURENT_PRICE_PHISHING.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-PHS").innerHTML = localStorage.TOTAL_PHISHING;
+
    //Anonymous
     document.getElementById("price-ANO").innerHTML = localStorage.CURENT_PRICE_ANONYMOUS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-ANO").innerHTML = localStorage.TOTAL_ANONYMOUS;
-   //DDOS
+
+    //DDOS
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
 
