@@ -2,10 +2,12 @@
 
 :root {
     --main-bg-color: #343434;
+    --text-green:#138A36BF;
     --major-green: #138A36;
     --major-bleu: #028090;
     --major-white: #F0F7F4;
     --major-error: #DB3A34;
+    --mainborder-agrey: #2F2F2F3F;
     --principal-font: terminal;
 }
 *{
@@ -37,7 +39,7 @@ html {
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: solid 1px #ffffff;
+    border: solid 2px var(--mainborder-agrey);
 }
 
 .left-part .pc_clicker {
@@ -60,7 +62,7 @@ html {
     left: 47%;
     font-size: 1.7vw;
     position: absolute;
-    color: #34700a;
+    color: var(--major-green);
     font-family: pixel;
 }
 
@@ -69,7 +71,7 @@ html {
     flex-direction: column;
     gap: 2vh;
     margin-top: 10px;
-    color: #34700a;
+    color: var(--text-green);
 }
 
 .left-part .text .bugs_count {
@@ -83,21 +85,23 @@ html {
     bottom: 0;
     left: 50%;
 }
-
+.temp{
+    padding: 4vh;
+    color: var(--text-green);
+}
 .midle-part {
     flex: 2 1 auto;
     backdrop-filter: blur(3px);
-    border: solid 1px #ffffff;
+    border: solid 1px var(--mainborder-agrey);
 }
-
 .right-part {
     flex: 1 1 auto;
     max-width: 25vw;
-    border: solid 1px #ffffff;
+    border: solid 1px var(--mainborder-agrey);
 }
 
 .right-part .build {
-    border: solid 1px #ffffff;
+    border: solid 1px var(--mainborder-agrey);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -107,6 +111,7 @@ html {
 
 .right-part .build .text {
     margin-left: 20px;
+    color: var(--text-green);
 }
 
 .right-part .build .text .name {
@@ -128,6 +133,7 @@ html {
     position: absolute;
     right: 20px;
     font-size: 4rem;
+    color: var(--text-green);
 }
 .right-part .build:not(#build-BD) .img{
     padding-left: 17px;

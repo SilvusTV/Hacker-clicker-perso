@@ -1,0 +1,90 @@
+@import "./font.css";
+
+:root {
+    --main-bg-color: #343434;
+    --text-green:#138A36BF;
+    --major-green: #138A36;
+    --major-bleu: #028090;
+    --major-white: #F0F7F4;
+    --major-error: #DB3A34;
+    --mainborder-agrey: #2F2F2F3F;
+    --principal-font: terminal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../asset/images/FigImg/Cathodic+screenSett.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    display: flex;
+}
+
+.main {
+    flex: 2;
+    min-height: 90vh;
+    max-height: 90vh;
+    width: 65vw;
+    margin: 2vh;
+    border: solid 1px var(--text-green);
+}
+.right-part {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px var(--text-green);
+    background: var(--main-bg-color);
+    margin: 2vh;
+    min-height: 90vh;
+    max-height: 90vh;
+    min-width: 15vw;
+    max-width: 20vw;
+}
+
+.right-part .top {
+    flex: 1;
+    background: #1A1A1AD7;
+    min-height: 45%;
+    max-height: 50%;
+    width: 100%;
+}
+.right-part .top #Button-Vol-one{
+
+}
+.right-part .bot {
+    flex: 1;
+    background: none;
+    min-height: 45%;
+    max-height: 50%;
+    width: 100%;
+}
+.right-part .bot #Button-Reset{
+    /*Contrainte*/
+    align-items: center;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    margin-left: 18%;
+    width: 65%;
+    height: 15%;
+    /*Rectangle*/
+    background: var(--major-green);
+    border-radius: 15px;
+    transition: background .3s ease-in-out , font-size .3s ease-in-out;
+    /*Fonts*/
+    font-size: 1.5rem;
+    color: var(--major-white);
+}
+.right-part .bot #Button-Reset:hover{
+
+    /*Rectangle*/
+    background: var(--text-green);
+    border-radius: 15px;
+    /*Fonts*/
+    font-size: 1.7rem;
+
+}
+
