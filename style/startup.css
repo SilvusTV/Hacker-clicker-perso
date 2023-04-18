@@ -1,0 +1,18 @@
+@import "font.css";
+
+html {
+    background: black;
+    color: white;
+    font-family: linux-terminal;
+}
+input{
+    background: transparent;
+    border: 0;
+    color: white;
+    font-family: linux-terminal;
+    width: calc(90vw - 170px);
+}
+input:focus{
+    border: none;
+    outline: none;
+}

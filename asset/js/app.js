@@ -2,6 +2,8 @@ function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
     localStorage.setItem("BUGS_NUMBER", bug_number);
+    let click = new Audio('/asset/sound/click.mp3')
+    click.play()
     update()
     price_changer()
     bugs_visual(bug_number)
@@ -39,6 +41,26 @@ function price_changer() {
         let who = "ANO";
         remove(who);
     }
+    //Flipper Zero
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_FLIPPER_ZERO)) {
+        document.getElementById("price-FZ").classList.remove("error");
+        document.getElementById("build-FZ").classList.add("clickable");
+        document.getElementById("build-FZ").setAttribute("onclick", "build(FZ)")
+        update()
+    } else {
+        let who = "FZ";
+        remove(who);
+    }
+    //Phishing
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_PHISHING)) {
+        document.getElementById("price-PHS").classList.remove("error");
+        document.getElementById("build-PHS").classList.add("clickable");
+        document.getElementById("build-PHS").setAttribute("onclick", "build(PHS)")
+        update()
+    } else {
+        let who = "PHS";
+        remove(who);
+    }
     //DDOS
     if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_DDOS)) {
         document.getElementById("price-DDOS").classList.remove("error");
@@ -50,8 +72,6 @@ function price_changer() {
         remove(who);
     }
 
-
-
     function remove(who) {
         document.getElementById("price-"+who).classList.add("error");
         document.getElementById("build-"+who).classList.remove("clickable");
@@ -60,26 +80,41 @@ function price_changer() {
 }
 
 function build(build) {
+    var total = ""
+    var curent = ""
+    var base = ""
+    var cps = ""
     if (build === "BUG_DETECTOR") {
-        var total = localStorage.TOTAL_BUG_DETECTOR
-        var curent = localStorage.CURENT_PRICE_BUG_DETECTOR
-        var base = localStorage.BASE_PRICE_BUG_DETECTOR
-        var cps = localStorage.CPS_BUG_DETECTOR
+        total = localStorage.TOTAL_BUG_DETECTOR
+        curent = localStorage.CURENT_PRICE_BUG_DETECTOR
+        base = localStorage.BASE_PRICE_BUG_DETECTOR
+        cps = localStorage.CPS_BUG_DETECTOR
     }else if (build === "BRUT_FORCE"){
-        var total = localStorage.TOTAL_BRUT_FORCE
-        var curent = localStorage.CURENT_PRICE_BRUT_FORCE
-        var base = localStorage.BASE_PRICE_BRUT_FORCE
-        var cps = localStorage.CPS_BRUT_FORCE
+
+        total = localStorage.TOTAL_BRUT_FORCE
+        curent = localStorage.CURENT_PRICE_BRUT_FORCE
+        base = localStorage.BASE_PRICE_BRUT_FORCE
+        cps = localStorage.CPS_BRUT_FORCE
+    }else if (build === "FLIPPER_ZERO"){
+        total = localStorage.TOTAL_FLIPPER_ZERO
+        curent = localStorage.CURENT_PRICE_FLIPPER_ZERO
+        base = localStorage.BASE_PRICE_FLIPPER_ZERO
+        cps = localStorage.CPS_FLIPPER_ZERO
+    }else if (build === "PHISHING"){
+        total = localStorage.TOTAL_PHISHING
+        curent = localStorage.CURENT_PRICE_PHISHING
+        base = localStorage.BASE_PRICE_PHISHING
+        cps = localStorage.CPS_PHISHING
     }else if (build === "ANONYMOUS"){
-        var total = localStorage.TOTAL_ANONYMOUS
-        var curent = localStorage.CURENT_PRICE_ANONYMOUS
-        var base = localStorage.BASE_PRICE_ANONYMOUS
-        var cps = localStorage.CPS_ANONYMOUS
+        total = localStorage.TOTAL_ANONYMOUS
+        curent = localStorage.CURENT_PRICE_ANONYMOUS
+        base = localStorage.BASE_PRICE_ANONYMOUS
+        cps = localStorage.CPS_ANONYMOUS
     }else if (build === "DDOS"){
-        var total = localStorage.TOTAL_DDOS
-        var curent = localStorage.CURENT_PRICE_DDOS
-        var base = localStorage.BASE_PRICE_DDOS
-        var cps = localStorage.CPS_DDOS
+        total = localStorage.TOTAL_DDOS
+        curent = localStorage.CURENT_PRICE_DDOS
+        base = localStorage.BASE_PRICE_DDOS
+        cps = localStorage.CPS_DDOS
     }
 
 
@@ -94,6 +129,9 @@ function build(build) {
 
     let new_cps = (parseFloat(localStorage.CPS)) + parseFloat(cps);
     localStorage.setItem("CPS", new_cps.toFixed(2))
+
+    let upgradeSound = new Audio('/asset/sound/upgrade.mp3')
+    upgradeSound.play()
 
     update()
     price_changer()
@@ -110,18 +148,31 @@ function update() {
     document.querySelector('title').innerHTML = localStorage.SCREEN_BUGS_NUMBER + " Bugs - Hacker clicker";
     document.getElementById("bug_checker_count").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
     document.getElementById("cps_count").innerHTML = localStorage.CPS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    
     //Bug Detector
     document.getElementById("price-BD").innerHTML = localStorage.CURENT_PRICE_BUG_DETECTOR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-BD").innerHTML = localStorage.TOTAL_BUG_DETECTOR;
-   //Brut force
+   
+    //Brut force
     document.getElementById("price-BF").innerHTML = localStorage.CURENT_PRICE_BRUT_FORCE.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-BF").innerHTML = localStorage.TOTAL_BRUT_FORCE;
+    
+    //Flipper zero
+    document.getElementById("price-FZ").innerHTML = localStorage.CURENT_PRICE_FLIPPER_ZERO.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-FZ").innerHTML = localStorage.TOTAL_FLIPPER_ZERO;
+    
+    //Phishing
+    document.getElementById("price-PHS").innerHTML = localStorage.CURENT_PRICE_PHISHING.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-PHS").innerHTML = localStorage.TOTAL_PHISHING;
+
    //Anonymous
     document.getElementById("price-ANO").innerHTML = localStorage.CURENT_PRICE_ANONYMOUS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-ANO").innerHTML = localStorage.TOTAL_ANONYMOUS;
-   //DDOS
+
+    //DDOS
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
+
 }
 
 function cps() {
