@@ -91,8 +91,26 @@ html {
 }
 .midle-part {
     flex: 2 1 auto;
-    backdrop-filter: blur(3px);
     border: solid 1px var(--mainborder-agrey);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 40vw
+}
+.history_bloc::-webkit-scrollbar {
+    display:none;
+}
+.history_bloc{
+    scrollbar-width: none;
+    overflow-y: scroll;
+    max-height: 90vh;
+}
+.midle-part .history{
+    border: solid 1px var(--mainborder-agrey);
+    min-height: calc(20vh + 2px);
+    backdrop-filter: blur(3px);
+    padding: 0;
+    margin: 0;
 }
 .right-part {
     flex: 1 1 auto;
@@ -150,4 +168,7 @@ html {
 
 .clickable {
     cursor: pointer;
+}
+.d-none{
+    display: none;
 }

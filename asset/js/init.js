@@ -5,7 +5,7 @@ if (localStorage.length === 0) {
     data_reset()
 }
 
-if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+if (window.performance.navigation) {
     update()
     price_changer()
     cps()

@@ -42,7 +42,7 @@ function price_changer() {
         remove(who);
     }
     //Flipper Zero
-    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_FLIPPER_ZERO)) {
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_FLIPPER_ZERO)) {
         document.getElementById("price-FZ").classList.remove("error");
         document.getElementById("build-FZ").classList.add("clickable");
         document.getElementById("build-FZ").setAttribute("onclick", "build(FZ)")
@@ -136,6 +136,7 @@ function build(build) {
     update()
     price_changer()
     bugs_visual(new_price)
+    history()
 }
 
 function update() {
