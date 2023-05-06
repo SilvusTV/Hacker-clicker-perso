@@ -71,32 +71,39 @@ function data_reset() {
 }
 
 function music_system() {
+    const songs = [
+        "/asset/sound/main_theme/main-01.mp3",
+        "/asset/sound/main_theme/main-02.mp3",
+        "/asset/sound/main_theme/main-03.mp3",
+        "/asset/sound/main_theme/main-04.mp3",
+        "/asset/sound/main_theme/main-05.mp3",
+        "/asset/sound/main_theme/main-06.mp3",
+        "/asset/sound/main_theme/main-07.mp3",
+        "/asset/sound/main_theme/main-08.mp3",
+        "/asset/sound/main_theme/main-09.mp3",
+        "/asset/sound/main_theme/main-10.mp3",
+        "/asset/sound/main_theme/main-11.mp3",
+        "/asset/sound/main_theme/main-12.mp3",
+    ];
 
-    var main_theme = new Audio('/asset/sound/silence.mp3')
-    console.log(main_theme)
-    main_theme.play()
+    let song = new Audio('/asset/sound/silence.mp3');
+    song.play()
+    let currentSong = 0;
+    let len = songs.length;
 
-    let i = 1;
-    let nextSong = "";
-
-    function lunch() {
-        console.log("je suis fini")
-        if (i >= 10) {
-            nextSong = new Audio("/asset/sound/main_theme/main-" + i + ".mp3");
-        } else {
-            nextSong = new Audio("/asset/sound/main_theme/main-0" + i + ".mp3");
-        }
-        main_theme = nextSong;
-        main_theme.play();
-        i++
-
-
-        if (i === 13) {
-            i = 1;
-        }
-
+    function playSong(index) {
+        song.src = songs[index];
+        song.play();
+        song.volume = 1;
     }
 
-    main_theme.addEventListener('ended', lunch(), true)
-    return "music as been lunch"
+    song.addEventListener("ended", function playNextS() {
+        if (currentSong === len) {
+            currentSong = 0;
+            playSong(currentSong);
+        } else {
+            playSong(currentSong);
+        }
+        currentSong++;
+    })
 }
