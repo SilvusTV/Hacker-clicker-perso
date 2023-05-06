@@ -1,3 +1,14 @@
+.modal-pager{
+    z-index: 999;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url("/asset/images/FigImg/Cathodic+screenSett.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container {
     display: flex;
 }
@@ -10,7 +21,7 @@
     margin: 2vh;
     border: solid 1px var(--text-green);
 }
-.right-part {
+.params-right-part {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -24,24 +35,24 @@
     max-width: 20vw;
 }
 
-.right-part .top {
+.params-right-part .top {
     flex: 1;
     background: #1A1A1AD7;
     min-height: 45%;
     max-height: 50%;
     width: 100%;
 }
-.right-part .top #Button-Vol-one{
+.params-right-part .top #Button-Vol-one{
 
 }
-.right-part .bot {
+.params-right-part .bot {
     flex: 1;
     background: none;
     min-height: 45%;
     max-height: 50%;
     width: 100%;
 }
-.right-part .bot #Button-Reset{
+.params-right-part .bot #Button-Reset{
     /*Contrainte*/
     align-items: center;
     margin-top: 50%;
@@ -57,13 +68,12 @@
     font-size: 1.5rem;
     color: var(--major-white);
 }
-.right-part .bot #Button-Reset:hover{
+.params-right-part .bot #Button-Reset:hover{
 
     /*Rectangle*/
     background: var(--text-green);
     border-radius: 15px;
     /*Fonts*/
     font-size: 1.7rem;
-
 }
 

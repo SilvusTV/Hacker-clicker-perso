@@ -183,6 +183,7 @@ function cps() {
         update()
         price_changer()
         bugs_visual(new_bug_number)
+
     }, 1000)
 
 }
