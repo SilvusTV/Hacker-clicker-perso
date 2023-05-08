@@ -7,10 +7,10 @@ if (localStorage.length === 0) {
 const chargement = window.performance.navigation
 
 if (chargement) {
+    music_system()
     update()
     price_changer()
     cps()
-    music_system()
 }
 
 function reset() {
@@ -35,6 +35,7 @@ function data_reset() {
     console.log("reset")
     //global init
     localStorage.setItem("BUGS_NUMBER", "0");
+    localStorage.setItem("TOTAL_BUGS_NUMBER", "0");
     localStorage.setItem("SCREEN_BUGS_NUMBER", "0")
     localStorage.setItem("CLICKER_MULTIPLICATOR", "1");
     localStorage.setItem("CPS", "0")
