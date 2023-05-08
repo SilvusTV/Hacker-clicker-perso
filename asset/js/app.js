@@ -1,7 +1,9 @@
 function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
+    let total_bug_number = parseFloat(localStorage.TOTAL_BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
     localStorage.setItem("BUGS_NUMBER", bug_number);
+    localStorage.setItem("TOTAL_BUGS_NUMBER", total_bug_number);
     let click = new Audio('/asset/sound/click.mp3')
     click.play()
     update()
@@ -174,12 +176,16 @@ function update() {
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
 
+    settings_update()
+
 }
 
 function cps() {
     setInterval(event => {
         let new_bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseFloat(localStorage.CPS)
+        let new_total_bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseFloat(localStorage.CPS)
         localStorage.setItem("BUGS_NUMBER", new_bug_number)
+        localStorage.setItem("TOTAL_BUGS_NUMBER", new_total_bug_number)
         update()
         price_changer()
         bugs_visual(new_bug_number)

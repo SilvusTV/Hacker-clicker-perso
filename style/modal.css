@@ -20,6 +20,7 @@
     width: 65vw;
     margin: 2vh;
     border: solid 1px var(--text-green);
+    color: white;
 }
 .params-right-part {
     flex: 2;
