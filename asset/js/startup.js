@@ -76,7 +76,7 @@ function commandLine(command) {
             "drwxr-xr-x 6 debian debian 4096 Apr 11 12:49 asset<br>" +
             "-rw-r--r-- 1 debian debian 2987 Apr 11 12:49 game.html<br>" +
             "-rw-r--r-- 1 debian debian  470 Apr 11 12:49 index.html<br>" +
-            "drwxr-xr-x 2 debian debian 4096 Apr 11 12:49 style" +
+            "drwxr-xr-x 2 debian debian 4096 Apr 11 12:49 style<br>" +
             "drwx------ 2 debian debian 4096 Apr 11 12:49 startGame.sh<br>";
         inputController()
     } else if (command === "startGame.sh") {
