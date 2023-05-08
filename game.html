@@ -2,11 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="asset/images/PC.png" type="image/x-icon">
     <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/settings-modal.css">
+    <link rel="stylesheet" href="style/restart-modal.css">
     <title>0 Bugs - Hacker clicker</title>
     <script src="asset/js/constant.js"></script>
 </head>
@@ -23,7 +25,7 @@
             <img src="asset/images/PC1024.png" alt="PC">
             <p id="bug_checker_count" class="bc_count">0</p>
         </button>
-<!--        <button class="reset" onclick="reset()">reset</button>-->
+        <!--        <button class="reset" onclick="reset()">reset</button>-->
         <button class="music" id="music" onclick="music_system()">music</button>
         <button class="settings" id="btn-settings">Settings</button>
     </div>
@@ -125,14 +127,28 @@
                 </button>
             </div>
             <div class="bot">
-                <button id="Button-Reset">Restart</button>
+                <button id="modal-restart" class="global button">Recommencer</button>
             </div>
         </div>
     </div>
 </section>
+
+<section id="restart-confirm" class="restart-confirm d-none">
+    <div class="restart-container">
+        <h2>Recommencer le jeux ?</h2>
+        <p>Comment voulez vous recommencer le jeu ?</p>
+        <div class="button-part">
+            <button id="restart-btn" class="global button">Aller à 0 Bug</button>
+            <button id="restartCLI-btn" class="global button">Aller au terminal</button>
+            <button id="close-restart" class="btn-cancel button">Annuler</button>
+        </div>
+    </div>
+</section>
+
 <script src="asset/js/settings.js"></script>
 <script src="asset/js/app.js"></script>
 <script src="asset/js/init.js"></script>
 <script src="asset/js/history.js"></script>
+<script src="asset/js/modal.js"></script>
 </body>
 </html>

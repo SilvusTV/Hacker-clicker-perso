@@ -13,26 +13,23 @@ if (chargement) {
     cps()
 }
 
-function reset() {
+//reset local
+document.getElementById("restart-btn").addEventListener("click", () => {
+    localStorage.clear();
+    data_reset();
+    location.reload();
+    close_restart_modal()
+})
 
-    const result = confirm("Voulez-vous recommencer le jeu ?")
-    if (result === true) {
-        const result = confirm("Voulez-vous retourner dans l'invite de commande ?")
-        if (result === true) {
-            localStorage.clear();
-            document.location.href = window.location.protocol + '//' + window.location.host + '/index.html';
-        } else {
-            localStorage.clear();
-            data_reset();
-            location.reload();
-        }
+//reset CLI
+document.getElementById("restartCLI-btn").addEventListener("click", () => {
+    localStorage.clear();
+    document.location.href = window.location.protocol + '//' + window.location.host + '/index.html';
+    close_restart_modal()
+})
 
-    }
-
-}
 
 function data_reset() {
-    console.log("reset")
     //global init
     localStorage.setItem("BUGS_NUMBER", "0");
     localStorage.setItem("TOTAL_BUGS_NUMBER", "0");

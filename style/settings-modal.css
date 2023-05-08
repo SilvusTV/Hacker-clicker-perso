@@ -1,5 +1,5 @@
 .modal-pager{
-    z-index: 999;
+    z-index: 10;
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -47,34 +47,12 @@
 
 }
 .params-right-part .bot {
-    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     min-height: 45%;
     max-height: 50%;
     width: 100%;
-}
-.params-right-part .bot #Button-Reset{
-    /*Contrainte*/
-    align-items: center;
-    margin-top: 50%;
-    margin-bottom: 50%;
-    margin-left: 18%;
-    width: 65%;
-    height: 15%;
-    /*Rectangle*/
-    background: var(--major-green);
-    border-radius: 15px;
-    transition: background .3s ease-in-out , font-size .3s ease-in-out;
-    /*Fonts*/
-    font-size: 1.5rem;
-    color: var(--major-white);
-}
-.params-right-part .bot #Button-Reset:hover{
 
-    /*Rectangle*/
-    background: var(--text-green);
-    border-radius: 15px;
-    /*Fonts*/
-    font-size: 1.7rem;
 }
-
