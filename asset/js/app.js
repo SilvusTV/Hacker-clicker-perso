@@ -1,3 +1,8 @@
+document.addEventListener('keyup', event => {
+    if (event.code === 'Space') {
+        clicker()
+    }
+})
 function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
