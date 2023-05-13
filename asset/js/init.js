@@ -36,6 +36,7 @@ function data_reset() {
     localStorage.setItem("SCREEN_BUGS_NUMBER", "0")
     localStorage.setItem("CLICKER_MULTIPLICATOR", "1");
     localStorage.setItem("CPS", "0")
+    localStorage.setItem("VOLUME", "50")
     //Bug detector
     localStorage.setItem("TOTAL_BUG_DETECTOR", "0")
     localStorage.setItem("BASE_PRICE_BUG_DETECTOR", "15")

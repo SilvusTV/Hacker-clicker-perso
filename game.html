@@ -26,7 +26,6 @@
             <p id="bug_checker_count" class="bc_count">0</p>
         </button>
         <!--        <button class="reset" onclick="reset()">reset</button>-->
-        <button class="music" id="music" onclick="music_system()">music</button>
         <button class="settings" id="btn-settings">Settings</button>
     </div>
     <div class="midle-part">
@@ -116,15 +115,23 @@
         </div>
         <div class="params-right-part">
             <div class="top">
-                <button id="Button-Vol-up">
-                    <img src="asset/images/img-sett/volume_plus_icon_251740.svg" alt="volume+">
-                </button>
-                <button id="Button-Vol-mute">
-                    <img src="asset/images/img-sett/volume_mute_sound_off_icon_251738.svg" alt="volume-">
-                </button>
-                <button id="Button-Vol-down">
-
-                </button>
+                <h1>Master Volume</h1>
+                <div id="volume-bar">
+                    <span id="volume-number">0</span>
+                </div>
+                <div class="vol-buttons">
+                    <button id="Button-Vol-down">Vol -</button>
+                    <button id="Button-Vol-mute">Vol Mute</button>
+                    <button id="Button-Vol-up">Vol +</button>
+                </div>
+                <div class="temp">
+                    <p>shift = 5</p><br>
+                    <p>ctrl = 10</p>
+                </div>
+                <div>
+                    <p>Si la musique n'est pas lancer, vous pouvez la démarrer ici</p>
+                    <button id="music">Start</button>
+                </div>
             </div>
             <div class="bot">
                 <button id="modal-restart" class="global button">Recommencer</button>
@@ -145,10 +152,10 @@
     </div>
 </section>
 
-<script src="asset/js/settings.js"></script>
 <script src="asset/js/app.js"></script>
 <script src="asset/js/init.js"></script>
 <script src="asset/js/history.js"></script>
+<script src="asset/js/settings.js"></script>
 <script src="asset/js/modal.js"></script>
 </body>
 </html>

@@ -17,7 +17,11 @@ document.getElementById("modal-restart").addEventListener("click", ()=>{
 document.getElementById("close-restart").addEventListener("click", ()=>{
     close_restart_modal()
 })
-
+document.addEventListener("keydown", function(event) {
+    if(event.keyCode === 27 && !document.getElementById("restart-confirm").classList.contains("d-none") ){
+        close_restart_modal()
+    }
+});
 
 
 function close_restart_modal(){
