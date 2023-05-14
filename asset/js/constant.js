@@ -4,3 +4,6 @@ let FZ = "FLIPPER_ZERO";
 let PHS = "PHISHING";
 let ANO = "ANONYMOUS";
 let DDOS = "DDOS";
+let BH = "BIO_HACKING";
+let CW = "CYBER_WAR";
+let EB = "EBOMB";

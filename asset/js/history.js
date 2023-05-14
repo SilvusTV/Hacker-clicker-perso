@@ -88,5 +88,56 @@ function history() {
             document.getElementById('history-DDOS').classList.remove('d-none')
         }
     }
+
+    //history Bio hacking
+    if (localStorage.TOTAL_BIO_HACKING > 0 && localStorage.TOTAL_BIO_HACKING !== 'undefined') {
+        document.getElementById('history-BH').innerHTML = null
+        let limite = 0
+
+        if (localStorage.TOTAL_BIO_HACKING > 100) {
+            limite = 100
+        } else {
+            limite = localStorage.TOTAL_BIO_HACKING
+        }
+
+        for (let i = limite; i !== 0; i--) {
+            document.getElementById('history-BH').innerHTML += '<img src="asset/images/BH.png" alt="BIO HACKING">'
+            document.getElementById('history-BH').classList.remove('d-none')
+        }
+    }
+
+    //history Cyber War
+    if (localStorage.TOTAL_CYBER_WAR > 0 && localStorage.TOTAL_CYBER_WAR !== 'undefined') {
+        document.getElementById('history-CW').innerHTML = null
+        let limite = 0
+
+        if (localStorage.TOTAL_CYBER_WAR > 100) {
+            limite = 100
+        } else {
+            limite = localStorage.TOTAL_CYBER_WAR
+        }
+
+        for (let i = limite; i !== 0; i--) {
+            document.getElementById('history-CW').innerHTML += '<img src="asset/images/CW.png" alt="CYBER WAR">'
+            document.getElementById('history-CW').classList.remove('d-none')
+        }
+    }
+
+    //history Bio hacking
+    if (localStorage.TOTAL_EBOMB > 0 && localStorage.TOTAL_EBOMB !== 'undefined') {
+        document.getElementById('history-EB').innerHTML = null
+        let limite = 0
+
+        if (localStorage.TOTAL_EBOMB > 100) {
+            limite = 100
+        } else {
+            limite = localStorage.TOTAL_EBOMB
+        }
+
+        for (let i = limite; i !== 0; i--) {
+            document.getElementById('history-EB').innerHTML += '<img src="asset/images/EB.png" alt="EBOMB">'
+            document.getElementById('history-EB').classList.remove('d-none')
+        }
+    }
 }
 

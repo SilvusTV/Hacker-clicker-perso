@@ -67,6 +67,21 @@ function data_reset() {
     localStorage.setItem("BASE_PRICE_DDOS", "1400000")
     localStorage.setItem("CURENT_PRICE_DDOS", "1400000")
     localStorage.setItem("CPS_DDOS", "1400")
+    //Bio Hacking
+    localStorage.setItem("TOTAL_BIO_HACKING", "0")
+    localStorage.setItem("BASE_PRICE_BIO_HACKING", "20000000")
+    localStorage.setItem("CURENT_PRICE_BIO_HACKING", "20000000")
+    localStorage.setItem("CPS_BIO_HACKING", "7800")
+    //Cyber War
+    localStorage.setItem("TOTAL_CYBER_WAR", "0")
+    localStorage.setItem("BASE_PRICE_CYBER_WAR", "330000000")
+    localStorage.setItem("CURENT_PRICE_CYBER_WAR", "330000000")
+    localStorage.setItem("CPS_CYBER_WAR", "44000")
+    //E-Bomb
+    localStorage.setItem("TOTAL_EBOMB", "0")
+    localStorage.setItem("BASE_PRICE_EBOMB", "5100000000")
+    localStorage.setItem("CURENT_PRICE_EBOMB", "5100000000")
+    localStorage.setItem("CPS_EBOMB", "260000")
 }
 
 function music_system() {
