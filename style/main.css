@@ -118,6 +118,10 @@ html {
     max-width: 25vw;
     border: solid 1px var(--mainborder-agrey);
 }
+.right-part .build_list{
+    height: 90vh;
+    overflow-y: scroll;
+}
 
 .right-part .build {
     border: solid 1px var(--mainborder-agrey);

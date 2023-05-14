@@ -85,6 +85,44 @@ function price_changer() {
         document.getElementById("build-"+who).classList.remove("clickable");
         document.getElementById("build-"+who).removeAttribute("onclick")
     }
+    //Bio Hacking
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_BIO_HACKING)) {
+        document.getElementById("price-BH").classList.remove("error");
+        document.getElementById("build-BH").classList.add("clickable");
+        document.getElementById("build-BH").setAttribute("onclick", "build(BH)")
+        update()
+    } else {
+        let who = "BH";
+        remove(who);
+    }
+
+    //Cyber War
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_CYBER_WAR)) {
+        document.getElementById("price-CW").classList.remove("error");
+        document.getElementById("build-CW").classList.add("clickable");
+        document.getElementById("build-CW").setAttribute("onclick", "build(CW)")
+        update()
+    } else {
+        let who = "CW";
+        remove(who);
+    }
+
+    //E Bombe
+    if (parseInt(localStorage.BUGS_NUMBER) >= parseInt(localStorage.CURENT_PRICE_EBOMB)) {
+        document.getElementById("price-EB").classList.remove("error");
+        document.getElementById("build-EB").classList.add("clickable");
+        document.getElementById("build-EB").setAttribute("onclick", "build(EB)")
+        update()
+    } else {
+        let who = "EB";
+        remove(who);
+    }
+
+    function remove(who) {
+        document.getElementById("price-"+who).classList.add("error");
+        document.getElementById("build-"+who).classList.remove("clickable");
+        document.getElementById("build-"+who).removeAttribute("onclick")
+    }
 }
 
 function build(build) {
@@ -123,6 +161,21 @@ function build(build) {
         curent = localStorage.CURENT_PRICE_DDOS
         base = localStorage.BASE_PRICE_DDOS
         cps = localStorage.CPS_DDOS
+    }else if (build === "BIO_HACKING"){
+        total = localStorage.TOTAL_BIO_HACKING
+        curent = localStorage.CURENT_PRICE_BIO_HACKING
+        base = localStorage.BASE_PRICE_BIO_HACKING
+        cps = localStorage.CPS_BIO_HACKING
+    }else if (build === "CYBER_WAR"){
+        total = localStorage.TOTAL_CYBER_WAR
+        curent = localStorage.CURENT_PRICE_CYBER_WAR
+        base = localStorage.BASE_PRICE_CYBER_WAR
+        cps = localStorage.CPS_CYBER_WAR
+    }else if (build === "EBOMB"){
+        total = localStorage.TOTAL_EBOMB
+        curent = localStorage.CURENT_PRICE_EBOMB
+        base = localStorage.BASE_PRICE_EBOMB
+        cps = localStorage.CPS_EBOMB
     }
 
 
@@ -182,6 +235,18 @@ function update() {
     //DDOS
     document.getElementById("price-DDOS").innerHTML = localStorage.CURENT_PRICE_DDOS.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     document.getElementById("build_value-DDOS").innerHTML = localStorage.TOTAL_DDOS;
+
+    //Bio hacking
+    document.getElementById("price-BH").innerHTML = localStorage.CURENT_PRICE_BIO_HACKING.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-BH").innerHTML = localStorage.TOTAL_BIO_HACKING;
+
+    //Cyber War
+    document.getElementById("price-CW").innerHTML = localStorage.CURENT_PRICE_CYBER_WAR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-CW").innerHTML = localStorage.TOTAL_CYBER_WAR;
+
+    //Ebomb
+    document.getElementById("price-EB").innerHTML = localStorage.CURENT_PRICE_EBOMB.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    document.getElementById("build_value-EB").innerHTML = localStorage.TOTAL_EBOMB;
 
     settings_update()
 
