@@ -70,6 +70,7 @@ function data_reset() {
 }
 
 function music_system() {
+
     const songs = [
         "/asset/sound/main_theme/main-01.mp3",
         "/asset/sound/main_theme/main-02.mp3",
@@ -93,7 +94,8 @@ function music_system() {
     function playSong(index) {
         song.src = songs[index];
         song.play();
-        song.volume = 1;
+
+        song.volume = parseInt(localStorage.VOLUME) / 100;
     }
 
     song.addEventListener("ended", function playNextS() {

@@ -11,6 +11,7 @@ function clicker() {
     localStorage.setItem("TOTAL_BUGS_NUMBER", total_bug_number);
     let click = new Audio('/asset/sound/click.mp3')
     click.play()
+    click.volume = parseInt(localStorage.VOLUME) / 100;
     update()
     price_changer()
     bugs_visual(bug_number)
@@ -139,6 +140,7 @@ function build(build) {
 
     let upgradeSound = new Audio('/asset/sound/upgrade.mp3')
     upgradeSound.play()
+    upgradeSound.volume = parseInt(localStorage.VOLUME) / 100;
 
     update()
     price_changer()

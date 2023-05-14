@@ -14,7 +14,6 @@ function builds_calculator(){
 
     return totalBuilds
 }
-document.getElementById("music").addEventListener("click", music_system)
 
 //Volume set-up
 let multiplicateur = 1
@@ -32,6 +31,7 @@ document.body.onkeyup = function (e){
     }else if (e.key === "Control"){
         multiplicateur = 1
     }
+
 }
 
 const current_volume = document.getElementById("volume-number")
@@ -48,6 +48,7 @@ document.getElementById("Button-Vol-up").addEventListener("click", ()=>{
         localStorage.VOLUME = current_volume.innerText
     }
     volume_bar()
+    sound_change_complete()
 })
 
 document.getElementById("Button-Vol-down").addEventListener("click", ()=>{
@@ -59,16 +60,25 @@ document.getElementById("Button-Vol-down").addEventListener("click", ()=>{
         localStorage.VOLUME = current_volume.innerText
     }
     volume_bar()
+    sound_change_complete()
 })
 
 document.getElementById("Button-Vol-mute").addEventListener("click", ()=>{
     current_volume.innerHTML = 0
     localStorage.VOLUME = 0
     volume_bar()
+    sound_change_complete()
 })
 
 function volume_bar() {
     const styleElem = document.head.appendChild(document.createElement("style"));
 
     styleElem.innerHTML = "#volume-bar:before {width:"+localStorage.VOLUME+"%;}";
+}
+
+function sound_change_complete(){
+    location.reload();
+    window.onload = function () {
+        document.getElementById("settings").classList.remove("d-none")
+    }
 }
