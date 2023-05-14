@@ -25,7 +25,6 @@
             <img src="asset/images/PC1024.png" alt="PC">
             <p id="bug_checker_count" class="bc_count">0</p>
         </button>
-        <!--        <button class="reset" onclick="reset()">reset</button>-->
         <button class="settings" id="btn-settings">Settings</button>
     </div>
     <div class="midle-part">
@@ -103,7 +102,7 @@
 <section id="settings" class="allpage modal-pager d-none">
     <div class="container">
         <div class="main">
-            <button id="close-settings">X</button>
+            <button id="close-settings" class="global button">X</button>
             <div class="total-bugs">
                 <p> Nombre total de bugs : </p>
                 <span id="total_bugs-number"></span>
@@ -120,17 +119,17 @@
                     <span id="volume-number">0</span>
                 </div>
                 <div class="vol-buttons">
-                    <button id="Button-Vol-down">Vol -</button>
-                    <button id="Button-Vol-mute">Vol Mute</button>
-                    <button id="Button-Vol-up">Vol +</button>
+                    <button id="Button-Vol-down" class="global button"><img src="/asset/images/img-sett/volume_minus_icon_251741.svg"></button>
+                    <button id="Button-Vol-mute" class="global button"><img src="/asset/images/img-sett/volume_mute_sound_off_icon_251738.svg"></button>
+                    <button id="Button-Vol-up" class="global button"><img src="/asset/images/img-sett/volume_plus_icon_251740.svg"></button>
                 </div>
                 <div class="temp">
                     <p>shift = 5</p><br>
                     <p>ctrl = 10</p>
                 </div>
-                <div>
+                <div id="start_music" class="temp">
                     <p>Si la musique n'est pas lancer, vous pouvez la démarrer ici</p>
-                    <button id="music">Start</button>
+                    <button id="music" class="global button" onclick="music_system()">Start</button>
                 </div>
             </div>
             <div class="bot">
@@ -152,10 +151,10 @@
     </div>
 </section>
 
+<script src="asset/js/settings.js"></script>
 <script src="asset/js/app.js"></script>
 <script src="asset/js/init.js"></script>
 <script src="asset/js/history.js"></script>
-<script src="asset/js/settings.js"></script>
 <script src="asset/js/modal.js"></script>
 </body>
 </html>
