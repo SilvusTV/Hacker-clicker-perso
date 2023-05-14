@@ -27,8 +27,8 @@
 .right-part .top {
     flex: 1;
     background: #1A1A1AD7;
-    min-height: 45%;
-    max-height: 50%;
+    min-height: 55%;
+    max-height: 55%;
     width: 100%;
 }
 .right-part .top #Button-Vol-one{

@@ -25,10 +25,13 @@
             <img src="asset/images/PC1024.png" alt="PC">
             <p id="bug_checker_count" class="bc_count">0</p>
         </button>
-        <button class="settings" id="btn-settings">Settings</button>
+
     </div>
     <div class="midle-part">
-        <h1 class="temp">history zone</h1>
+        <div class="head">
+            <h1 class="temp">history zone</h1>
+            <button class="global button" id="btn-settings">Settings</button>
+        </div>
         <div class="history_bloc">
             <div class="history d-none" id="history-BF"></div>
             <div class="history d-none" id="history-FZ"></div>
@@ -38,6 +41,7 @@
             <div class="history d-none" id="history-BH"></div>
             <div class="history d-none" id="history-CW"></div>
             <div class="history d-none" id="history-EB"></div>
+            <div class="history" style="min-height: 0;"></div>
         </div>
     </div>
     <div class="right-part">
@@ -129,13 +133,17 @@
     <div class="container">
         <div class="main">
             <button id="close-settings" class="global button">X</button>
-            <div class="total-bugs">
-                <p> Nombre total de bugs : </p>
-                <span id="total_bugs-number"></span>
+            <div class="total-bugs text">
+                <p> Nombre total de bugs découvert: </p>
+                <san id="total_bugs-number"></san>
             </div>
-            <div class="total-build">
-                <p>Nombre total de batiment : </p>
+            <div class="total-build text">
+                <p>Nombre total de batiment acheté: </p>
                 <span id="total_builds"></span>
+            </div>
+            <div class="total-build text">
+                <p>Nombre total de click : </p>
+                <span id="total_clicks"></span>
             </div>
         </div>
         <div class="params-right-part">
@@ -145,17 +153,17 @@
                     <span id="volume-number">0</span>
                 </div>
                 <div class="vol-buttons">
-                    <button id="Button-Vol-down" class="global button"><img src="/asset/images/img-sett/volume_minus_icon_251741.svg"></button>
-                    <button id="Button-Vol-mute" class="global button"><img src="/asset/images/img-sett/volume_mute_sound_off_icon_251738.svg"></button>
-                    <button id="Button-Vol-up" class="global button"><img src="/asset/images/img-sett/volume_plus_icon_251740.svg"></button>
+                    <button id="Button-Vol-down" class="global button sound"><img src="/asset/images/img-sett/volume_minus_icon_251741.svg"></button>
+                    <button id="Button-Vol-mute" class="global button sound"><img src="/asset/images/img-sett/volume_mute_sound_off_icon_251738.svg"></button>
+                    <button id="Button-Vol-up" class="global button sound"><img src="/asset/images/img-sett/volume_plus_icon_251740.svg"></button>
                 </div>
-                <div class="temp">
+                <div class="temp right_txt">
                     <p>shift = 5</p><br>
                     <p>ctrl = 10</p>
                 </div>
                 <div id="start_music" class="temp">
                     <p>Si la musique n'est pas lancer, vous pouvez la démarrer ici</p>
-                    <button id="music" class="global button" onclick="music_system()">Start</button>
+                    <button id="music" class="global button start_pos" onclick="music_system()">Start</button>
                 </div>
             </div>
             <div class="bot">

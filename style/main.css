@@ -20,6 +20,8 @@ html {
     font-weight: 100;
     overflow: hidden;
     background-image:url("/asset/images/FigImg/BackgroungImg+assenteLED.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -41,6 +43,10 @@ html {
     display: flex;
     flex-direction: column;
     border: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 2;
+    border-image-repeat: round;
+    backdrop-filter: blur(2px);
 }
 
 .left-part .pc_clicker {
@@ -56,6 +62,7 @@ html {
 .left-part .pc_clicker img {
     width: 22vw;
     height: auto;
+    backdrop-filter: blur(3px);
 }
 
 .left-part .pc_clicker p {
@@ -89,14 +96,31 @@ html {
 .temp{
     padding: 4vh;
     color: var(--text-green);
+    border-bottom: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 10;
+    border-image-repeat: round;
 }
 .midle-part {
     flex: 2 1 auto;
-    border: solid 1px var(--mainborder-agrey);
+    border: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 2;
+    border-image-repeat: round;
     display: flex;
     flex-direction: column;
     gap: 0;
     max-width: 40vw
+}
+.midle-part .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#btn-settings {
+    margin: 0 4vh 0 0;
 }
 .history_bloc::-webkit-scrollbar {
     display:none;
@@ -105,26 +129,44 @@ html {
     scrollbar-width: none;
     overflow-y: scroll;
     max-height: 90vh;
+    backdrop-filter: blur(2.5px);
 }
 .midle-part .history{
-    border: solid 1px var(--mainborder-agrey);
+    position: relative;
+    border-top: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 20;
+    border-image-repeat: round;
     min-height: calc(20vh + 2px);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     padding: 0;
     margin: 0;
+}
+.midle-part .visible:last-child{
+    border-bottom:solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 20;
+    border-image-repeat: round;
 }
 .right-part {
     flex: 1 1 auto;
     max-width: 25vw;
-    border: solid 1px var(--mainborder-agrey);
+    border: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 10;
+    border-image-repeat: round;
 }
 .right-part .build_list{
     height: 90vh;
     overflow-y: scroll;
+    backdrop-filter: blur(1.5px);
 }
 
 .right-part .build {
-    border: solid 1px var(--mainborder-agrey);
+    border-bottom: solid 2px var(--mainborder-agrey);
+    border-image-source: url("../asset/images/FigImg/Woodtexture.png");
+    border-image-slice: 10;
+    border-image-repeat: round;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -220,7 +262,21 @@ html {
 .button:active::before {
     transform: translate3d(0, 0, -1em);
 }
-
+/*Button Posi*/
+.sound {
+    margin-top: 2em;
+}
+.start_pos{
+    left: 8em;
+}
+/*Text Posi */
+.right_txt{
+    display: flex;
+    flex-direction:row;
+}
+.right_txt p{
+    margin: 2em;
+ }
 /*Button Color*/
 
 .global {
@@ -252,5 +308,6 @@ html {
 .btn-cancel:active {
     background: #9b1616;
 }
+
 
 

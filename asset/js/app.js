@@ -9,6 +9,7 @@ function clicker() {
     let total_bug_number = parseFloat(localStorage.TOTAL_BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
     localStorage.setItem("BUGS_NUMBER", bug_number);
     localStorage.setItem("TOTAL_BUGS_NUMBER", total_bug_number);
+    localStorage.TOTAL_CLICK = parseInt(localStorage.TOTAL_CLICK) + 1
     let click = new Audio('/asset/sound/click.mp3')
     click.play()
     click.volume = parseInt(localStorage.VOLUME) / 100;

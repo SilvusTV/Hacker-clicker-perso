@@ -9,14 +9,15 @@ function history() {
         document.getElementById('history-BF').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_BRUT_FORCE > 100) {
-            limite = 100
+        if (localStorage.TOTAL_BRUT_FORCE > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_BRUT_FORCE
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-BF').innerHTML += '<img src="asset/images/brut-force.png" alt="brut force">'
+            const style = randomPose();
+            document.getElementById('history-BF').innerHTML += '<img src="asset/images/brut-force.png" alt="brut force" style="'+style+'">'
             document.getElementById('history-BF').classList.remove('d-none')
         }
     }
@@ -26,14 +27,15 @@ function history() {
         document.getElementById('history-FZ').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_FLIPPER_ZERO > 100) {
-            limite = 100
+        if (localStorage.TOTAL_FLIPPER_ZERO > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_FLIPPER_ZERO
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-FZ').innerHTML += '<img src="asset/images/Flipper-Zero.png" alt="Flipper Zero">'
+            const style = randomPose();
+            document.getElementById('history-FZ').innerHTML += '<img src="asset/images/Flipper-Zero.png" alt="Flipper Zero" style="'+style+'">'
             document.getElementById('history-FZ').classList.remove('d-none')
         }
     }
@@ -43,14 +45,15 @@ function history() {
         document.getElementById('history-PHS').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_PHISHING > 100) {
-            limite = 100
+        if (localStorage.TOTAL_PHISHING > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_PHISHING
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-PHS').innerHTML += '<img src="asset/images/phishing.png" alt="Phishing">'
+            const style = randomPose();
+            document.getElementById('history-PHS').innerHTML += '<img src="asset/images/phishing.png" alt="Phishing" style="'+style+'">'
             document.getElementById('history-PHS').classList.remove('d-none')
         }
     }
@@ -60,14 +63,15 @@ function history() {
         document.getElementById('history-ANO').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_ANONYMOUS > 100) {
-            limite = 100
+        if (localStorage.TOTAL_ANONYMOUS > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_ANONYMOUS
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-ANO').innerHTML += '<img src="asset/images/anonymous.png" alt="Anonymous">'
+            const style = randomPose();
+            document.getElementById('history-ANO').innerHTML += '<img src="asset/images/anonymous.png" alt="Anonymous" style="'+style+'">'
             document.getElementById('history-ANO').classList.remove('d-none')
         }
     }
@@ -77,14 +81,15 @@ function history() {
         document.getElementById('history-DDOS').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_DDOS > 100) {
-            limite = 100
+        if (localStorage.TOTAL_DDOS > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_DDOS
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-DDOS').innerHTML += '<img src="asset/images/DDOS.png" alt="DDOS">'
+            const style = randomPose();
+            document.getElementById('history-DDOS').innerHTML += '<img src="asset/images/DDOS.png" alt="DDOS" style="'+style+'">'
             document.getElementById('history-DDOS').classList.remove('d-none')
         }
     }
@@ -94,14 +99,15 @@ function history() {
         document.getElementById('history-BH').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_BIO_HACKING > 100) {
-            limite = 100
+        if (localStorage.TOTAL_BIO_HACKING > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_BIO_HACKING
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-BH').innerHTML += '<img src="asset/images/BH.png" alt="BIO HACKING">'
+            const style = randomPose();
+            document.getElementById('history-BH').innerHTML += '<img src="asset/images/BH.png" alt="BIO HACKING" style="'+style+'">'
             document.getElementById('history-BH').classList.remove('d-none')
         }
     }
@@ -111,14 +117,15 @@ function history() {
         document.getElementById('history-CW').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_CYBER_WAR > 100) {
-            limite = 100
+        if (localStorage.TOTAL_CYBER_WAR > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_CYBER_WAR
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-CW').innerHTML += '<img src="asset/images/CW.png" alt="CYBER WAR">'
+            const style = randomPose();
+            document.getElementById('history-CW').innerHTML += '<img src="asset/images/CW.png" alt="CYBER WAR" style="'+style+'">'
             document.getElementById('history-CW').classList.remove('d-none')
         }
     }
@@ -128,16 +135,25 @@ function history() {
         document.getElementById('history-EB').innerHTML = null
         let limite = 0
 
-        if (localStorage.TOTAL_EBOMB > 100) {
-            limite = 100
+        if (localStorage.TOTAL_EBOMB > 50) {
+            limite = 50
         } else {
             limite = localStorage.TOTAL_EBOMB
         }
 
         for (let i = limite; i !== 0; i--) {
-            document.getElementById('history-EB').innerHTML += '<img src="asset/images/EB.png" alt="EBOMB">'
+            const style = randomPose();
+            document.getElementById('history-EB').innerHTML += '<img src="asset/images/EB.png" alt="EBOMB" style="'+style+'">'
             document.getElementById('history-EB').classList.remove('d-none')
         }
     }
 }
+//Function_History_Alea
 
+function randomPose () {
+
+    let top = Math.round(Math.random()*85);
+    let left = Math.round(Math.random()*95);
+
+    return`position: absolute; top:${top}%; left:${left}%;`
+}

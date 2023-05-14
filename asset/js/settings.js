@@ -1,6 +1,7 @@
 function settings_update(){
     document.getElementById("total_bugs-number").innerText = parseInt(localStorage.TOTAL_BUGS_NUMBER).toString()
     document.getElementById("total_builds").innerText = builds_calculator().toString()
+    document.getElementById("total_clicks").innerText = parseInt(localStorage.TOTAL_CLICK).toString()
 }
 
 function builds_calculator(){
@@ -11,6 +12,9 @@ function builds_calculator(){
     totalBuilds += parseInt(localStorage.TOTAL_PHISHING)
     totalBuilds += parseInt(localStorage.TOTAL_ANONYMOUS)
     totalBuilds += parseInt(localStorage.TOTAL_DDOS)
+    totalBuilds += parseInt(localStorage.TOTAL_BIO_HACKING)
+    totalBuilds += parseInt(localStorage.TOTAL_CYBER_WAR)
+    totalBuilds += parseInt(localStorage.TOTAL_EBOMB)
 
     return totalBuilds
 }
