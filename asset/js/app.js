@@ -3,6 +3,10 @@ document.addEventListener('keyup', event => {
         clicker()
     }
 })
+
+document.getElementById("clicker").addEventListener('click', ()=>{
+    clicker()
+})
 function clicker() {
 
     let bug_number = parseFloat(localStorage.BUGS_NUMBER) + parseInt(localStorage.CLICKER_MULTIPLICATOR);
