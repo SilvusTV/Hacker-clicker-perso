@@ -19,4 +19,4 @@ Vous arrivez sur un terminal ! il faut aller dans **startGame.sh** avec des droi
 
 Vosu pouvez vous balader grace à la commande **help** !
 
-Une fois dans le jeu ! vous pouvez cliquer sur le pc pour commencer le jeu ou appuyer sur la bar _espace__ et appuyer sur __esc__ pour aller dans les paramètres.
+Une fois dans le jeu ! vous pouvez cliquer sur le pc pour commencer le jeu ou appuyer sur la bar __espace__ et appuyer sur __esc__ pour aller dans les paramètres.
